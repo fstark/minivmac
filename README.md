@@ -80,3 +80,5 @@ In general, I use shell scripts with my favorite variations:
 
 ## An SE/30
 ./setup_t -bg 1 -t lx64 -mem 8M -hres 512 -vres 342 -depth 0 -speed a -m II -magnify 0 > setup.sh && . setup.sh && make && ./minivmac
+
+See https://www.gryphel.com/c/minivmac/options.html for the list of options.
