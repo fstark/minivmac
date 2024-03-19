@@ -1,0 +1,10 @@
+# Executables
+setup_t
+minivmac
+
+# Build directory
+/bld/
+/cfg/
+
+# macOS specific files
+.DS_Store
