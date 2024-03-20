@@ -14,10 +14,12 @@ bld/GLOBGLUE.o : src/GLOBGLUE.c cfg/CNFGGLOB.h
 	gcc "src/GLOBGLUE.c" -o "bld/GLOBGLUE.o" $(mk_COptions)
 bld/M68KITAB.o : src/M68KITAB.c cfg/CNFGGLOB.h
 	gcc "src/M68KITAB.c" -o "bld/M68KITAB.o" $(mk_COptions)
-bld/MINEM68K.o : src/MINEM68K.c cfg/CNFGGLOB.h
+bld/MINEM68K.o : src/MINEM68K.c src/FPMATHEM.h src/FPCPEMDV.h cfg/CNFGGLOB.h
 	gcc "src/MINEM68K.c" -o "bld/MINEM68K.o" $(mk_COptions)
 bld/VIAEMDEV.o : src/VIAEMDEV.c cfg/CNFGGLOB.h
 	gcc "src/VIAEMDEV.c" -o "bld/VIAEMDEV.o" $(mk_COptions)
+bld/VIA2EMDV.o : src/VIA2EMDV.c cfg/CNFGGLOB.h
+	gcc "src/VIA2EMDV.c" -o "bld/VIA2EMDV.o" $(mk_COptions)
 bld/IWMEMDEV.o : src/IWMEMDEV.c cfg/CNFGGLOB.h
 	gcc "src/IWMEMDEV.c" -o "bld/IWMEMDEV.o" $(mk_COptions)
 bld/SCCEMDEV.o : src/SCCEMDEV.c cfg/CNFGGLOB.h
@@ -32,12 +34,14 @@ bld/SONYEMDV.o : src/SONYEMDV.c cfg/CNFGGLOB.h
 	gcc "src/SONYEMDV.c" -o "bld/SONYEMDV.o" $(mk_COptions)
 bld/SCRNEMDV.o : src/SCRNEMDV.c cfg/CNFGGLOB.h
 	gcc "src/SCRNEMDV.c" -o "bld/SCRNEMDV.o" $(mk_COptions)
+bld/VIDEMDEV.o : src/VIDEMDEV.c cfg/CNFGGLOB.h
+	gcc "src/VIDEMDEV.c" -o "bld/VIDEMDEV.o" $(mk_COptions)
 bld/MOUSEMDV.o : src/MOUSEMDV.c cfg/CNFGGLOB.h
 	gcc "src/MOUSEMDV.c" -o "bld/MOUSEMDV.o" $(mk_COptions)
 bld/ADBEMDEV.o : src/ADBEMDEV.c cfg/CNFGGLOB.h
 	gcc "src/ADBEMDEV.c" -o "bld/ADBEMDEV.o" $(mk_COptions)
-bld/SNDEMDEV.o : src/SNDEMDEV.c cfg/CNFGGLOB.h
-	gcc "src/SNDEMDEV.c" -o "bld/SNDEMDEV.o" $(mk_COptions)
+bld/ASCEMDEV.o : src/ASCEMDEV.c cfg/CNFGGLOB.h
+	gcc "src/ASCEMDEV.c" -o "bld/ASCEMDEV.o" $(mk_COptions)
 bld/PROGMAIN.o : src/PROGMAIN.c cfg/CNFGGLOB.h
 	gcc "src/PROGMAIN.c" -o "bld/PROGMAIN.o" $(mk_COptions)
 
@@ -47,6 +51,7 @@ ObjFiles = \
 	bld/GLOBGLUE.o \
 	bld/M68KITAB.o \
 	bld/VIAEMDEV.o \
+	bld/VIA2EMDV.o \
 	bld/IWMEMDEV.o \
 	bld/SCCEMDEV.o \
 	bld/RTCEMDEV.o \
@@ -54,9 +59,10 @@ ObjFiles = \
 	bld/SCSIEMDV.o \
 	bld/SONYEMDV.o \
 	bld/SCRNEMDV.o \
+	bld/VIDEMDEV.o \
 	bld/MOUSEMDV.o \
 	bld/ADBEMDEV.o \
-	bld/SNDEMDEV.o \
+	bld/ASCEMDEV.o \
 	bld/PROGMAIN.o \
 
 

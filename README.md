@@ -87,13 +87,14 @@ See https://www.gryphel.com/c/minivmac/options.html for the list of options.
 
 # Building on a x86 Mac
 
-To build on a mac, use ``-t mc64``
+To build on a mac, use ``-t mc64`` instead of ``-t lx64``
 
 The resulting binary should work well, unless started on a retina display. Change the ``NSHighResolutionCapable`` key in the ``Info.plist`` to ``0`` to have it work when started on any screen (but menus will be blurred on retina)
 
 Use:
-./setup_t -m SE -mem 4M -t mc64 -hres 512 -vres 342 -speed a -magnify 0 > setup.sh && plutil -replace NSHighResolutionCapable -string 0 minivmac.app/Contents/Info.plist && bash ./setup.sh && make && ./minivmac.app/Contents/MacOS/minivmac
+``./setup_t -m II -mem 8M -t mc64 -hres 512 -vres 342 -speed a -magnify 0 > setup.sh && bash ./setup.sh && make && plutil -replace NSHighResolutionCapable -string 0 minivmac.app/Contents/Info.plist && ./minivmac.app/Contents/MacOS/minivmac``
 
 Alternatively, one can use ``-api`` with ``mac``, ``osx``, ``sdl``, ``sd2`` or ``cco`` to try using different APIs on the mac
 
 Building on OSX arm should be ``-t mcar``. Unclear if it works.
+
