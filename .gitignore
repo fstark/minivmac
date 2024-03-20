@@ -2,6 +2,7 @@
 setup_t
 minivmac
 setup.sh
+/minivmac.app/
 
 # Build directory
 /bld/

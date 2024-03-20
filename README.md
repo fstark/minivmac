@@ -82,3 +82,18 @@ In general, I use shell scripts with my favorite variations:
 ./setup_t -bg 1 -t lx64 -mem 8M -hres 512 -vres 342 -depth 0 -speed a -m II -magnify 0 > setup.sh && . setup.sh && make && ./minivmac
 
 See https://www.gryphel.com/c/minivmac/options.html for the list of options.
+
+
+
+# Building on a x86 Mac
+
+To build on a mac, use ``-t mc64``
+
+The resulting binary should work well, unless started on a retina display. Change the ``NSHighResolutionCapable`` key in the ``Info.plist`` to ``0`` to have it work when started on any screen (but menus will be blurred on retina)
+
+Use:
+./setup_t -m SE -mem 4M -t mc64 -hres 512 -vres 342 -speed a -magnify 0 > setup.sh && plutil -replace NSHighResolutionCapable -string 0 minivmac.app/Contents/Info.plist && bash ./setup.sh && make && ./minivmac.app/Contents/MacOS/minivmac
+
+Alternatively, one can use ``-api`` with ``mac``, ``osx``, ``sdl``, ``sd2`` or ``cco`` to try using different APIs on the mac
+
+Building on OSX arm should be ``-t mcar``. Unclear if it works.
